@@ -25,15 +25,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/shape"
+        android:fontFamily="@font/bauh"
+        android:onClick="toRegisterPassword"
         android:text="@string/Next"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="toRegisterPassword"
-        android:textSize="20sp"
-        android:fontFamily="@font/bauh"
-        android:background="#0487b9"
-        android:textColor="@android:color/white"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/registerEmail_UtxtUsername"
@@ -52,18 +54,19 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:background="@color/tamnoPlava"
         android:fontFamily="@font/bauh"
+        android:paddingBottom="20sp"
+        android:paddingLeft="10sp"
+        android:paddingTop="20sp"
         android:text="@string/createnewaccount"
-        android:textColor="@color/svijetloPlava"
+        android:textColor="@android:color/white"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
