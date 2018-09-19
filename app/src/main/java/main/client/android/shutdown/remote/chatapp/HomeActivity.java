@@ -9,6 +9,7 @@ import android.widget.Button;
 public class HomeActivity extends AppCompatActivity {
 
     Button btnRegister;
+    Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +17,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         btnRegister = findViewById(R.id.btnRegister);
+        btnLogin = findViewById(R.id.btnLogin);
     }
 
 

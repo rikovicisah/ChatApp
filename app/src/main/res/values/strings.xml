@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">ChatApp</string>
     <string name="btnRegister">Register</string>
+    <string name="login">Login</string>
     <string name="Enteremail">Enter email</string>
     <string name="Enterpassword">Enter password</string>
     <string name="enterUsername">Enter username</string>
     <string name="retypePass">Retype password</string>
     <string name="Next">Next</string>
     <string name="createAccount">Create account</string>
+    <string name="logout">Logout</string>
+    <string name="search">Search</string>
 </resources>

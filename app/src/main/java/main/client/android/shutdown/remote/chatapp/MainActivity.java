@@ -3,6 +3,9 @@ package main.client.android.shutdown.remote.chatapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -14,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    Toolbar main_page_bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,19 +25,74 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+        main_page_bar = findViewById(R.id.main_app_bar);
+
+        main_page_bar = findViewById(R.id.main_page_toolbar);
+        setSupportActionBar(main_page_bar);
+        getSupportActionBar().setTitle("ChatApp : " + mAuth.getCurrentUser().getEmail());
+
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         //u slucaju da nije logiran preusmjeriti na home acitivity
         if(currentUser == null){
-            Intent homeActivity = new Intent(MainActivity.this, HomeActivity.class);
-            startActivity(homeActivity);
-            finish();
+            sendToHome();
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+
+        switch (item.getItemId()){
+            case R.id.main_menu_accountSettings:
+                accountSettings();
+                break;
+            case R.id.main_menu_allUsers:
+                allUsers();
+                break;
+            case R.id.main_menu_exit:
+                exit();
+                break;
+            case R.id.main_menu_logout:
+                logout();
+                break;
+        }
+        return true;
+    }
+
+    private void exit() {
+        System.exit(0);
+    }
+
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        sendToHome();
+    }
+
+    private void accountSettings() {
+    }
+
+    private void allUsers() {
+    }
+
+    private void sendToHome(){
+        Intent homeActivity = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(homeActivity);
+        finish();
+    }
+
+
 }
