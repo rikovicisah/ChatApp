@@ -31,7 +31,9 @@
         app:layout_constraintStart_toStartOf="parent"
         android:onClick="toRegisterPassword"
         android:textSize="20sp"
-        android:fontFamily="@font/bauh"/>
+        android:fontFamily="@font/bauh"
+        android:background="#0487b9"
+        android:textColor="@android:color/white"/>
 
     <EditText
         android:id="@+id/registerEmail_UtxtUsername"
@@ -57,7 +59,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/bauh"
         android:text="@string/createnewaccount"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/svijetloPlava"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

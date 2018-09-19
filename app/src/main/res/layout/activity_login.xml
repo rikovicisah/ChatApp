@@ -16,7 +16,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/bauh"
         android:text="@string/login"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/svijetloPlava"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +62,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="login_Login"/>
+        android:onClick="login_Login"
+        android:background="#0487b9"
+        android:textColor="@android:color/white"/>
+
 
 </android.support.constraint.ConstraintLayout>

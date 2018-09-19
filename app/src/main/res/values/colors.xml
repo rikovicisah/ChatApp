@@ -3,4 +3,6 @@
     <color name="colorPrimary">@android:color/holo_blue_bright</color>
     <color name="colorPrimaryDark">@android:color/holo_blue_bright</color>
     <color name="colorAccent">@android:color/holo_blue_bright</color>
+    <color name="svijetloPlava">#0CA3DC</color>
+    <color name="tamnoPlava">#0487b9</color>
 </resources>

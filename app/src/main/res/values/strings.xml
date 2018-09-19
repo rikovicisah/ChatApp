@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ChatApp</string>
+    <string name="app_name">Littera</string>
     <string name="btnRegister">Register</string>
     <string name="login">Login</string>
     <string name="Enteremail">Enter email</string>
