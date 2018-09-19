@@ -26,4 +26,10 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(register);
         finish();
     }
+
+    public void login(View view){
+        Intent login = new Intent(HomeActivity.this, LoginActivity.class);
+        startActivity(login);
+        finish();
+    }
 }

@@ -56,7 +56,7 @@ public class RegisterPasswordActivity extends AppCompatActivity {
                                 finish();
 
                             } else {
-                                Toast.makeText(RegisterPasswordActivity.this, "Authentication failed.",
+                                Toast.makeText(RegisterPasswordActivity.this, "Authentication failed. Check your connection",
                                         Toast.LENGTH_SHORT).show();
                             }
                         }

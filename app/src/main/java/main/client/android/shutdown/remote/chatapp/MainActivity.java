@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     Toolbar main_page_bar;
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         main_page_bar = findViewById(R.id.main_page_toolbar);
         setSupportActionBar(main_page_bar);
-        getSupportActionBar().setTitle("ChatApp : " + mAuth.getCurrentUser().getEmail());
+        getSupportActionBar().setTitle("ChatApp : ");
 
     }
 
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void allUsers() {
+
     }
 
     private void sendToHome(){

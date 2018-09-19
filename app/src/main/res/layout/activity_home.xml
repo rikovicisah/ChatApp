@@ -17,7 +17,9 @@
         android:text="@string/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"
+        android:fontFamily="@font/bauh"/>
 
     <Button
         android:id="@+id/btnLogin"
@@ -32,6 +34,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.025"
+        android:textSize="20sp"
+        android:fontFamily="@font/bauh"
+        android:onClick="login"/>
 
 </android.support.constraint.ConstraintLayout>
