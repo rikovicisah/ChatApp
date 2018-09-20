@@ -100,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
 
     //TODO uraditi accountSettings u MainActivity
     private void accountSettings() {
+        Intent accountSettings = new Intent(MainActivity.this, AccountSettingsActivity.class);
+        startActivity(accountSettings);
+        finish();
     }
 
     //TODO uraditi allUsers u MainActivity
