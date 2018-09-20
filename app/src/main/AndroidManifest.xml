@@ -23,7 +23,8 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".RegisterEmailActivity" />
         <activity android:name=".RegisterPasswordActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".AccountSettingsActivity"></activity>
     </application>
 
 </manifest>

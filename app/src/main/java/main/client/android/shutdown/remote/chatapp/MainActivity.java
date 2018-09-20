@@ -1,6 +1,8 @@
 package main.client.android.shutdown.remote.chatapp;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -20,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     Toolbar main_page_bar;
     String email;
 
+    ViewPager tabPager;
+    private PageAdapter pageAdapter;
+    private TabLayout tabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +38,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(main_page_bar);
         getSupportActionBar().setTitle("ChatApp : ");
 
+        tabLayout = findViewById(R.id.main_tab);
+
+        //tabs
+        tabPager = findViewById(R.id.tabPager);
+        pageAdapter = new PageAdapter(getSupportFragmentManager());
+
+        tabPager.setAdapter(pageAdapter);
+
+        tabLayout.setupWithViewPager(tabPager);
     }
 
     @Override
@@ -83,9 +98,11 @@ public class MainActivity extends AppCompatActivity {
         sendToHome();
     }
 
+    //TODO uraditi accountSettings u MainActivity
     private void accountSettings() {
     }
 
+    //TODO uraditi allUsers u MainActivity
     private void allUsers() {
 
     }

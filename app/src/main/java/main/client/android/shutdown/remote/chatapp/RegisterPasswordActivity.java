@@ -1,5 +1,6 @@
 package main.client.android.shutdown.remote.chatapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public class RegisterPasswordActivity extends AppCompatActivity {
     String username;
 
     private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,22 +42,33 @@ public class RegisterPasswordActivity extends AppCompatActivity {
         username = fromRegisterEmail.getStringExtra("username");
 
         mAuth = FirebaseAuth.getInstance();
+
+        progressDialog = new ProgressDialog(this);
     }
 
     public void createAccount(View view){
         if(registerPassword_UtxtPassword.getText().toString().equals(registerPassword_UtxtPasswordRetype.getText().toString())
                 && registerPassword_UtxtPassword.getText().toString().length() > 7){
+            progressDialog.setTitle("Registering user");
+            progressDialog.setMessage("Please wait...");
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+
+            //TODO provjeriti da li ima korisnik sa tim emailom
 
             mAuth.createUserWithEmailAndPassword(email, registerPassword_UtxtPassword.getText().toString())
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                progressDialog.dismiss();
                                 Intent main = new Intent(RegisterPasswordActivity.this, MainActivity.class);
+                                main.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(main);
                                 finish();
 
                             } else {
+                                progressDialog.hide();
                                 Toast.makeText(RegisterPasswordActivity.this, "Authentication failed. Check your connection",
                                         Toast.LENGTH_SHORT).show();
                             }

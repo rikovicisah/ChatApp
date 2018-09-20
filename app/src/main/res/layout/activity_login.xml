@@ -35,7 +35,6 @@
         android:hint="@string/Enteremail"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -49,7 +48,6 @@
         android:hint="@string/Enterpassword"
         android:inputType="textPassword"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

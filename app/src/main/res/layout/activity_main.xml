@@ -6,26 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include layout="@layout/app_toolbar"
-        android:id="@+id/main_page_toolbar">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    </include>
+        <!--Toolbar -->
+        <include
+            android:id="@+id/main_page_toolbar"
+            layout="@layout/app_toolbar"></include>
 
-    <TextView
-        android:id="@+id/textView"
+        <!--Tab -->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/main_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar">
+
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!--Tabovi -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/tabPager"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="MAIN PAGE"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_height="400dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintVertical_bias="1.0">
+
+    </android.support.v4.view.ViewPager>
+
+
 </android.support.constraint.ConstraintLayout>
